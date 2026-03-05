@@ -13,9 +13,9 @@
 - L) Cross-references
 <!-- /TOC -->
 
-Start with 1 sentence listing the applicable EU directives/regulations for this CPS product and the conformity assessment with the highest barrier.
 
-**POINTER-GATE:** EU product regulation for CPS is multi-layered and in transition. Machinery Regulation 2023/1230 application from 2027-01-20 [S,85] — replaces Directive 2006/42/EC. CRA (EU 2024/2847) application dates phased [S,75]. RED delegated act on cybersecurity [S,70] — date and scope may overlap with CRA. Harmonised standards (hEN) under each directive are being developed or transitioned — mark specific hEN references Unknown unless verified on the OJ/EUR-Lex. Notified body availability for new regulations is Unknown. CE marking interactions between multiple directives require careful analysis — each directive's conformity assessment is independent but the CE marking is cumulative.
+## Confidence notes
+ EU product regulation for CPS is multi-layered and in transition. Machinery Regulation 2023/1230 application from 2027-01-20 [S,85] — replaces Directive 2006/42/EC. CRA (EU 2024/2847) application dates phased [S,75]. RED delegated act on cybersecurity [S,70] — date and scope may overlap with CRA. Harmonised standards (hEN) under each directive are being developed or transitioned — mark specific hEN references Unknown unless verified on the OJ/EUR-Lex. Notified body availability for new regulations is Unknown. CE marking interactions between multiple directives require careful analysis — each directive's conformity assessment is independent but the CE marking is cumulative.
 
 **A) CPS product characterisation**
 
@@ -269,12 +269,12 @@ Timeline considerations:
 
 **L) Cross-references**
 
-- **functional-safety.md** (in this skill): SIL/PL determination and safety evidence feed Machinery Regulation EHSR compliance.
-- **ot-security.md** (in this skill): IEC 62443 controls feed CRA Annex I evidence and Machinery Regulation EHSR 1.1.9.
-- **safety-security-interaction.md** (in this skill): Joint analysis when safety and security requirements interact in the product.
-- **eu-regulatory (cra reference)**: Pure software CRA classification. This reference extends for CPS products with physical coupling.
-- **eu-regulatory (multi-framework reference)**: Sequencing strategy when 3+ frameworks apply (common for CPS).
-- **eu-regulatory (ai-act reference)**: If CPS product contains AI.
-- **supply-chain-security**: SBOM generation for firmware/embedded components; CRA SBOM obligation.
-- **security-depth (vulnerability-pipeline reference)**: CRA ENISA reporting workflow; CVD process.
-- **assurance-case-builder**: Build structured compliance assurance case mapping product evidence to regulatory requirements.
+- **functional-safety.md** (`docs/` in this repo): SIL/PL determination and safety evidence feed Machinery Regulation EHSR compliance.
+- **ot-security.md** (`docs/` in this repo): IEC 62443 controls feed CRA Annex I evidence and Machinery Regulation EHSR 1.1.9.
+- **safety-security-interaction.md** (`docs/` in this repo): Joint analysis when safety and security requirements interact in the product.
+- **CRA classification (software-only):** Pure software CRA classification. This reference extends for CPS products with physical coupling.
+- **Multi-framework convergence:** Sequencing strategy when 3+ frameworks apply (common for CPS).
+- **AI Act classification:** If CPS product contains AI.
+- **Supply chain (SBOM/signing):** SBOM generation for firmware/embedded components; CRA SBOM obligation.
+- **Vulnerability disclosure pipeline:** CRA ENISA reporting workflow; CVD process.
+- **Structured assurance case (GSN/CAE):** Build structured compliance assurance case mapping product evidence to regulatory requirements.

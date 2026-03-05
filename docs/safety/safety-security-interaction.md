@@ -11,9 +11,9 @@
 - J) Cross-references
 <!-- /TOC -->
 
-Start with 1 sentence naming the most dangerous safety-security interaction in the system: a case where a security failure causes a safety hazard OR a safety mechanism creates a security vulnerability.
 
-**POINTER-GATE:** Safety-security interaction analysis is an emerging discipline. IEC 63069 (Security for industrial process measurement, control and automation — Framework for functional safety and security) is the primary reference but not yet widely adopted [S,75]. IEC TR 63074 provides guidance on the safety and security interface in machinery [S,80]. ISA/IEC 62443 and IEC 61508/61511 each acknowledge the other domain but do not prescribe joint analysis methods in detail. Academic methods (STPA-Sec, STPA-SafeSec, CHASSIS framework) exist but are not standardized — mark [S,70]. The patterns in this reference are synthesized from these sources.
+## Confidence notes
+ Safety-security interaction analysis is an emerging discipline. IEC 63069 (Security for industrial process measurement, control and automation — Framework for functional safety and security) is the primary reference but not yet widely adopted [S,75]. IEC TR 63074 provides guidance on the safety and security interface in machinery [S,80]. ISA/IEC 62443 and IEC 61508/61511 each acknowledge the other domain but do not prescribe joint analysis methods in detail. Academic methods (STPA-Sec, STPA-SafeSec, CHASSIS framework) exist but are not standardized — mark [S,70]. The patterns in this reference are synthesized from these sources.
 
 **A) Why safety-security interaction analysis is mandatory for CPS**
 
@@ -141,7 +141,7 @@ Examples:
 
 **F) Unified assurance case structure**
 
-Build a single assurance case arguing BOTH safety AND security, using the assurance-case-builder skill pattern:
+Build a single assurance case arguing BOTH safety AND security, following the ISO/IEC 15026-2 assurance case pattern:
 
 ```
 TLC [G1]: [CPS product/system] is acceptably safe AND secure for operation in [context].
@@ -183,7 +183,7 @@ Deploy monitors that detect when a safety-security interaction is occurring at r
 | Firmware version monitor | Safety component firmware changed without approval (SS-7: change coupling) | Alert + block activation until verified |
 | Safety override state monitor | Safety override active beyond expected maintenance window (SS-3: override as attack vector) | Alert + automatic override timeout + escalation |
 
-Integrate these monitors into the OT monitoring stack (observability-stack-ops) with priority routing (all safety-security interaction alerts are ≥P2).
+Integrate these monitors into the OT monitoring stack with priority routing (all safety-security interaction alerts are ≥P2).
 
 **H) Change management for interacting safety-security controls**
 
@@ -220,12 +220,12 @@ Change request involving a safety component or a security control protecting a s
 
 **J) Cross-references**
 
-- **functional-safety.md** (in this skill): Source of hazard register, safety functions, SIL allocation, UCAs.
-- **ot-security.md** (in this skill): Source of zone/conduit model, threat model, SL-T allocation.
-- **cps-product-regulation.md** (in this skill): Regulatory drivers for joint analysis (Machinery Regulation EHSR 1.1.9, CRA).
-- **stpa-full**: For certification-grade causal analysis of safety-security interactions (attacker as controller in control structure).
-- **analysis-and-impact (threat-model reference)**: STRIDE analysis; also blast-radius for changes affecting both domains.
-- **cps-and-numeric (runtime-contracts reference)**: PIAL boundary contracts that enforce both safety and security invariants.
-- **assurance-case-builder**: Unified safety-security assurance case (section F pattern).
-- **sociotechnical-control-design**: Operator response to safety-security events; alarm prioritization when safety and security alarms compete for attention.
-- **operational-workflows (change-runbook reference)**: Joint change management process for interacting controls.
+- **functional-safety.md** (`docs/` in this repo): Source of hazard register, safety functions, SIL allocation, UCAs.
+- **ot-security.md** (`docs/` in this repo): Source of zone/conduit model, threat model, SL-T allocation.
+- **cps-product-regulation.md** (`docs/` in this repo): Regulatory drivers for joint analysis (Machinery Regulation EHSR 1.1.9, CRA).
+- **Full STPA (full STPA methodology):** For certification-grade causal analysis of safety-security interactions (attacker as controller in control structure).
+- **Threat modelling (STRIDE):** STRIDE analysis; also blast-radius for changes affecting both domains.
+- **Runtime contracts (PIAL enforcement):** PIAL boundary contracts that enforce both safety and security invariants.
+- **Structured assurance case (GSN/CAE):** Unified safety-security assurance case (section F pattern).
+- **Operator interface design:** Operator response to safety-security events; alarm prioritization when safety and security alarms compete for attention.
+- **Joint change management:** Joint change management process for interacting controls.

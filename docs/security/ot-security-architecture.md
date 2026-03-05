@@ -12,9 +12,9 @@
 - K) Cross-references
 <!-- /TOC -->
 
-Start with 1 sentence naming the most exposed OT zone and the threat with highest physical consequence.
 
-**POINTER-GATE:** IEC 62443 series (parts 1-1 through 4-2) are the primary OT security standard suite. Part-specific clause references are edition-sensitive — mark [S,85]. ISASecure and IECEE certification scheme details are volatile — mark [S,80]. NIST SP 800-82 Rev 3 is the US reference; content is stable but revision-specific — mark [S,85]. OT product vulnerabilities (Siemens, Rockwell, Schneider, ABB, Honeywell advisories) are volatile by definition — never mark [F] without ICS-CERT/CISA advisory reference verified in this session. Purdue model is a conceptual reference architecture, not a standard — implementations vary widely.
+## Confidence notes
+ IEC 62443 series (parts 1-1 through 4-2) are the primary OT security standard suite. Part-specific clause references are edition-sensitive — mark [S,85]. ISASecure and IECEE certification scheme details are volatile — mark [S,80]. NIST SP 800-82 Rev 3 is the US reference; content is stable but revision-specific — mark [S,85]. OT product vulnerabilities (Siemens, Rockwell, Schneider, ABB, Honeywell advisories) are volatile by definition — never mark [F] without ICS-CERT/CISA advisory reference verified in this session. Purdue model is a conceptual reference architecture, not a standard — implementations vary widely.
 
 MITRE ATT&CK for ICS is a useful threat knowledge base but is continuously updated — mark specific technique IDs [S,80] as they may be reclassified.
 
@@ -263,19 +263,19 @@ Certification route:
 - **System integrator:** IEC 62443-2-4 + 3-3 (for the integrated system).
 - **Product vendor (PLC, sensor, actuator, SCADA):** IEC 62443-4-1 (SDL) + 4-2 (component requirements). CRA may require this for EU market.
 
-NIS2 interaction: essential/important entities operating OT in scope for NIS2 Article 21 measures. IEC 62443 controls map well to NIS2 obligations — use eu-regulatory (control-mapper reference) for the crosswalk.
+NIS2 interaction: essential/important entities operating OT in scope for NIS2 Article 21 measures. IEC 62443 controls map well to NIS2 obligations — see platform-assurance regulatory-mapping.md for the crosswalk.
 
 CRA interaction: products with digital elements used in OT (PLCs, smart sensors, gateways, industrial IoT) are in scope for CRA. CRA conformity assessment can reference IEC 62443-4-2 as evidence (when harmonised standards are published).
 
 **K) Cross-references**
 
-- **functional-safety.md** (in this skill): Safety functions must reside in protected zones. SL-T for safety zones must ensure security cannot defeat safety integrity.
-- **cps-product-regulation.md** (in this skill): CRA applies to OT products placed on EU market. NIS2 applies to operators of OT in essential/important entities.
-- **safety-security-interaction.md** (in this skill): Joint analysis when security controls affect safety function availability or when safety mechanisms create security vulnerabilities.
-- **analysis-and-impact (threat-model reference)**: Escalate for formal STRIDE at IT-OT boundary.
-- **security-depth (egress-network reference)**: Network segmentation patterns (Cilium, Calico) for container-based OT edge; firewall-as-code for OT zone enforcement.
-- **security-depth (vulnerability-pipeline reference)**: CRA ENISA reporting obligations for OT product vulnerabilities.
-- **eu-regulatory (nis2 reference)**: NIS2 obligations for OT operators.
-- **operational-workflows (evidence-pack reference)**: Assemble evidence for IEC 62443 certification audit.
-- **observability-stack-ops**: OT monitoring stack deployment and operation.
-- **sociotechnical-control-design**: OT operator alarm management, control room design, shift handover safety.
+- **functional-safety.md** (`docs/` in this repo): Safety functions must reside in protected zones. SL-T for safety zones must ensure security cannot defeat safety integrity.
+- **cps-product-regulation.md** (`docs/` in this repo): CRA applies to OT products placed on EU market. NIS2 applies to operators of OT in essential/important entities.
+- **safety-security-interaction.md** (`docs/` in this repo): Joint analysis when security controls affect safety function availability or when safety mechanisms create security vulnerabilities.
+- **Threat modelling (STRIDE):** Escalate for formal STRIDE at IT-OT boundary.
+- **Network segmentation:** Network segmentation patterns (Cilium, Calico) for container-based OT edge; firewall-as-code for OT zone enforcement.
+- **Vulnerability disclosure pipeline:** CRA ENISA reporting obligations for OT product vulnerabilities.
+- **NIS2 obligations:** NIS2 obligations for OT operators.
+- **Evidence pipeline:** Assemble evidence for IEC 62443 certification audit.
+- **OT monitoring stack:** OT monitoring stack deployment and operation.
+- **Operator interface design:** OT operator alarm management, control room design, shift handover safety.

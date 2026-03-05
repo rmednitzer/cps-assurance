@@ -12,9 +12,9 @@
 - K) Cross-references
 <!-- /TOC -->
 
-Start with 1 sentence naming the highest-consequence hazard and the safety function that mitigates it.
 
-**POINTER-GATE:** IEC 61508 (2010 edition) is the reference functional safety standard; sector standards (ISO 13849-1:2023, IEC 62061, IEC 61511, IEC 61513, ISO 26262, EN 50128/50129) inherit or adapt from it. Mark specific edition/clause references [S,85] unless user confirms. SIL determination methods (risk graph, risk matrix, LOPA) have standard-specific variants — state which method and edition. ISO 13849-1:2023 supersedes 2015 edition with changes to Category/PL determination — mark [S,80]. Machinery Regulation 2023/1230 application from 2027-01-20 [S,85] — EHSR references to Annex III may change with harmonised standards. Harmonised standards under Machinery Regulation are being developed — mark Unknown for specific hEN references.
+## Confidence notes
+ IEC 61508 (2010 edition) is the reference functional safety standard; sector standards (ISO 13849-1:2023, IEC 62061, IEC 61511, IEC 61513, ISO 26262, EN 50128/50129) inherit or adapt from it. Mark specific edition/clause references [S,85] unless user confirms. SIL determination methods (risk graph, risk matrix, LOPA) have standard-specific variants — state which method and edition. ISO 13849-1:2023 supersedes 2015 edition with changes to Category/PL determination — mark [S,80]. Machinery Regulation 2023/1230 application from 2027-01-20 [S,85] — EHSR references to Annex III may change with harmonised standards. Harmonised standards under Machinery Regulation are being developed — mark Unknown for specific hEN references.
 
 **A) System characterisation**
 - System name and boundary (what is inside the safety analysis scope)
@@ -26,7 +26,7 @@ Start with 1 sentence naming the highest-consequence hazard and the safety funct
 
 **B) Hazard identification (STPA-informed)**
 
-Use STPA methodology adapted for CPS safety. This skill produces a hazard register compatible with IEC 61508 HARA and feeds stpa-full if certification-grade depth is needed.
+Use STPA methodology adapted for CPS safety. This methodology produces a hazard register compatible with IEC 61508 HARA and feeds a full STPA analysis if certification-grade depth is needed.
 
 For each hazard:
 ```
@@ -132,7 +132,7 @@ CCF beta factor estimation: state method, assumed beta, and sensitivity analysis
 
 **G) PIAL boundary contracts for safety functions**
 
-Every safety function interface is a PIAL boundary. Produce contracts using the pattern from cps-and-numeric (runtime-contracts reference):
+Every safety function interface is a PIAL boundary. Produce contracts following the PIAL runtime contract pattern:
 
 Sensor ingestion boundary:
 - Input invariants: range [min, max], rate [samples/s], freshness [max age], resolution, noise floor
@@ -203,12 +203,12 @@ Map each relevant EHSR to: safety function(s), SIL/PL target, evidence, and gap 
 
 **K) Cross-references**
 
-- **stpa-full**: Escalate for full causal analysis when certification evidence is required. This reference produces the quick hazard register; stpa-full produces the complete UCA/scenario/constraint/evidence chain.
-- **cps-and-numeric (timing-budget reference)**: Derive timing budgets for safety function response times (process safety time → compute deadline → actuator response).
-- **cps-and-numeric (runtime-contracts reference)**: Produce the enforceable PIAL boundary contracts specified in section G.
-- **ot-security.md** (in this skill): Safety functions must be in protected zones with appropriate SL-T. Machinery Regulation 1.1.9 requires cybersecurity of control systems.
-- **cps-product-regulation.md** (in this skill): CE marking requires conformity with all applicable directives including Machinery Regulation. SIL/PL evidence feeds the technical documentation.
-- **safety-security-interaction.md** (in this skill): Joint analysis when safety mechanisms are attack targets or security measures could impair safety functions.
-- **digital-twins-robotics (robotics-safety reference)**: Collaborative robot safety (ISO/TS 15066 force/pressure limits, safeguarding, workspace design).
-- **sociotechnical-control-design**: Operator interface for safety-critical actions — alarm philosophy, override management, mode awareness.
-- **assurance-case-builder**: Build the safety case (GSN/CAE) using hazards, safety functions, SIL allocations, and evidence from this reference as claim/evidence nodes.
+- **Full STPA:** Escalate to full STPA methodology for certification-grade causal analysis. This document produces the quick hazard register; a full STPA produces the complete UCA/scenario/constraint/evidence chain.
+- **Timing budget analysis:** Derive timing budgets for safety function response times (process safety time → compute deadline → actuator response).
+- **Runtime contracts (PIAL enforcement):** Produce the enforceable PIAL boundary contracts specified in section G.
+- **ot-security.md** (`docs/` in this repo): Safety functions must be in protected zones with appropriate SL-T. Machinery Regulation 1.1.9 requires cybersecurity of control systems.
+- **cps-product-regulation.md** (`docs/` in this repo): CE marking requires conformity with all applicable directives including Machinery Regulation. SIL/PL evidence feeds the technical documentation.
+- **safety-security-interaction.md** (`docs/` in this repo): Joint analysis when safety mechanisms are attack targets or security measures could impair safety functions.
+- **Robotics safety (ISO/TS 15066):** Collaborative robot safety (ISO/TS 15066 force/pressure limits, safeguarding, workspace design).
+- **Operator interface design:** Operator interface for safety-critical actions — alarm philosophy, override management, mode awareness.
+- **Structured assurance case (GSN/CAE):** Build the safety case (GSN/CAE) using hazards, safety functions, SIL allocations, and evidence from this reference as claim/evidence nodes.
