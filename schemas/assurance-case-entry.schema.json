@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/assurance-case-entry.schema.json",
+  "title": "Assurance case element entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(G|C|S|Sn|E)-\\d+$"
+    },
+    "object_type": {
+      "const": "assurance_case_element"
+    },
+    "element_type": {
+      "type": "string",
+      "enum": [
+        "goal",
+        "context",
+        "strategy",
+        "solution",
+        "evidence"
+      ]
+    },
+    "statement": {
+      "type": "string"
+    },
+    "supported_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(G|C|S|Sn|E)-\\d+$"
+      }
+    },
+    "in_context_of": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(G|C|S|Sn|E)-\\d+$"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^E-\\d+$"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "element_type",
+    "statement"
+  ]
+}

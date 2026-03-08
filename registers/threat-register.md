@@ -7,9 +7,9 @@
 
 ## Register
 
-| ID | Threat | STRIDE | Entry point | Affected assets/zones | Physical consequence | Existing controls | Required level | Status |
-|----|--------|--------|-------------|-----------------------|----------------------|------------------|----------------|--------|
-| T-1 | [Populate] | Spoofing / Tampering / Repudiation / Information disclosure / DoS / Elevation | [Interface or conduit] | Z-n / CO-n / Asset-n | [Describe] | [Control list] | [SL-T / JSSR] | Draft / Mitigated / Accepted |
+| ID | Threat | STRIDE | Entry point | Preconditions | Affected assets | Zones / conduits | Safety relevance | Physical consequence | Existing controls | Required controls | Verification | Status |
+|----|--------|--------|-------------|---------------|----------------|------------------|-----------------|----------------------|------------------|------------------|-------------|--------|
+| T-1 | [Populate] | Spoofing / Tampering / Repudiation / Information disclosure / DoS / Elevation | [Interface or conduit] | [Assumptions] | [Asset-n] | Z-n / CO-n | H-n / SF-n / SSI-n | [Describe] | [Control list] | [Gap-closing controls] | [Test / analysis / inspection] | Draft / Mitigated / Accepted |
 
 ## Review log
 

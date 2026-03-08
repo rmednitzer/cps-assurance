@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/loss-entry.schema.json",
+  "title": "Loss entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^L-\\d+$"
+    },
+    "object_type": {
+      "const": "loss"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "personnel_safety",
+        "environmental",
+        "property_mission",
+        "operational",
+        "reputational"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "catastrophic",
+        "critical",
+        "marginal",
+        "negligible"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "description",
+    "category"
+  ]
+}

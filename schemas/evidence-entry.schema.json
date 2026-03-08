@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/evidence-entry.schema.json",
+  "title": "Evidence entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^E-\\d+$"
+    },
+    "object_type": {
+      "const": "evidence"
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "hazard_analysis",
+        "sil_pl_allocation",
+        "fmeda_report",
+        "safety_function_test",
+        "plc_logic_hash",
+        "zone_conduit_verification",
+        "ssi_review",
+        "threat_assessment",
+        "conformity_package",
+        "doc_of_conformity",
+        "sbom_cps",
+        "pentest_ot",
+        "proof_test_record",
+        "pre_commissioning_safety",
+        "pre_commissioning_security",
+        "annual_review",
+        "change_review",
+        "traceability_manifest",
+        "assurance_case"
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sha256_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "cps_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(L|H|SF|UCA|SC|T|Z|CO|SSI|JSSR|PROD)-\\d+$"
+      }
+    },
+    "retention_tier": {
+      "type": "string",
+      "enum": [
+        "governance_10y",
+        "ci_3y"
+      ]
+    },
+    "framework_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "artifact_type",
+    "source",
+    "created_at",
+    "retention_tier"
+  ]
+}

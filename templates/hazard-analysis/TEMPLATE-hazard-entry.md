@@ -22,10 +22,10 @@ Categories: Personnel safety / Environmental / Property / Mission / Legal-regula
 
 ## Hazards
 
-| ID | Hazard description | Losses | Severity | Exposure | Avoidability | SIL/PL target | Safety function(s) |
-|----|-------------------|--------|----------|----------|-------------|---------------|-------------------|
-| H-1 | [System] in [unsafe state] while [context] | L-1 | Catastrophic | | | SIL [n] | SF-1 |
-| H-2 | | | | | | | |
+| ID | Hazard description | Losses | Severity | Exposure | Avoidability | SIL/PL target | Safety function(s) | SSI-relevant? |
+|----|-------------------|--------|----------|----------|-------------|---------------|-------------------|---------------|
+| H-1 | [System] in [unsafe state] while [context] | L-1 | Catastrophic | | | SIL [n] | SF-1 | Y/N |
+| H-2 | | | | | | | | |
 
 Severity: Catastrophic / Critical / Marginal / Negligible
 Exposure: Frequent / Probable / Occasional / Remote / Improbable

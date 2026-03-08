@@ -21,7 +21,8 @@
       "items": {
         "type": "string",
         "pattern": "^L-\\d+$"
-      }
+      },
+      "minItems": 1
     },
     "safety_functions": {
       "type": "array",

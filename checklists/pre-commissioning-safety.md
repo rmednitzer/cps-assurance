@@ -11,6 +11,8 @@
 - [ ] SIL/PL allocation documented and reviewed
 - [ ] Safety functions specified and implemented (SF-n entries)
 - [ ] FMEDA / reliability calculations complete and meet SIL target
+- [ ] FMEDA / reliability analysis confirms SIL/PL target is achievable
+- [ ] Common cause failure (CCF) analysis complete for redundant architectures
 - [ ] Safety-security interaction analysis complete (SSI register populated)
 - [ ] All open items from hazard analysis resolved or accepted with documented rationale
 
@@ -31,6 +33,8 @@
 - [ ] All safety function test cases executed and passed
 - [ ] Setpoints and trip levels verified against hazard analysis
 - [ ] Safety override/bypass logic tested: activates correctly, times out, logs
+- [ ] Proof test baseline captured (as-commissioned configuration stored)
+- [ ] Degraded mode behaviour tested (loss of single sensor, single channel, etc.)
 
 ## Network / security
 
@@ -40,6 +44,12 @@
 - [ ] Safety PLC credentials changed from defaults
 - [ ] PLC logic hash baseline captured and stored
 - [ ] OT monitoring active on safety zone (IDS, PLC change detection)
+
+## Operator competency
+
+- [ ] Operators trained on safety function behaviour and emergency procedures
+- [ ] Operator response times validated against assumptions in safety analysis
+- [ ] Training records documented and stored
 
 ## Documentation
 
@@ -54,7 +64,7 @@
 - [ ] Conformity assessment complete for all applicable directives
 - [ ] EU Declaration of Conformity drawn up
 - [ ] CE marking ready to affix (after ALL assessments pass)
-- [ ] SBOM generated and stored (if CRA-scope)
+- [ ] SBOM generated, validated complete (all direct and transitive dependencies), and stored (if CRA-scope)
 - [ ] Vulnerability disclosure policy published (if CRA-scope)
 
 ## Sign-off

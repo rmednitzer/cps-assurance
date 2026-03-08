@@ -239,7 +239,130 @@ artifacts:
     status: active
     canonical_source: checklists/annual-review.md
 
+  # New schemas
+  - path: schemas/loss-entry.schema.json
+    artifact_type: normative
+    scope: loss-entry-schema
+    status: active
+    canonical_source: schemas/loss-entry.schema.json
+  - path: schemas/uca-entry.schema.json
+    artifact_type: normative
+    scope: uca-entry-schema
+    status: active
+    canonical_source: schemas/uca-entry.schema.json
+  - path: schemas/jssr-entry.schema.json
+    artifact_type: normative
+    scope: jssr-entry-schema
+    status: active
+    canonical_source: schemas/jssr-entry.schema.json
+  - path: schemas/evidence-entry.schema.json
+    artifact_type: normative
+    scope: evidence-entry-schema
+    status: active
+    canonical_source: schemas/evidence-entry.schema.json
+  - path: schemas/assurance-case-entry.schema.json
+    artifact_type: normative
+    scope: assurance-case-entry-schema
+    status: active
+    canonical_source: schemas/assurance-case-entry.schema.json
+
+  # New documentation
+  - path: docs/glossary.md
+    artifact_type: normative
+    scope: glossary-of-terms
+    status: active
+    canonical_source: docs/glossary.md
+  - path: docs/getting-started/simple-robot-arm-example.md
+    artifact_type: normative
+    scope: getting-started-worked-example
+    status: active
+    canonical_source: docs/getting-started/simple-robot-arm-example.md
+  - path: docs/assurance/common-mistakes.md
+    artifact_type: normative
+    scope: common-mistakes-anti-patterns
+    status: active
+    canonical_source: docs/assurance/common-mistakes.md
+  - path: docs/assurance/schema-register-column-mapping.md
+    artifact_type: normative
+    scope: schema-register-column-mapping
+    status: active
+    canonical_source: docs/assurance/schema-register-column-mapping.md
+  - path: docs/compliance/cra-chapter-iv-implementation.md
+    artifact_type: normative
+    scope: cra-chapter-iv-notified-body
+    status: active
+    canonical_source: docs/compliance/cra-chapter-iv-implementation.md
+  - path: docs/compliance/cra-sbom-requirements.md
+    artifact_type: normative
+    scope: cra-sbom-format-retention
+    status: active
+    canonical_source: docs/compliance/cra-sbom-requirements.md
+  - path: docs/compliance/cra-product-classification.md
+    artifact_type: normative
+    scope: cra-product-classification-decision
+    status: active
+    canonical_source: docs/compliance/cra-product-classification.md
+  - path: docs/compliance/hEN-tracker.md
+    artifact_type: normative
+    scope: harmonised-standard-tracking
+    status: active
+    canonical_source: docs/compliance/hEN-tracker.md
+  - path: docs/compliance/product-conformity-sequencing.md
+    artifact_type: normative
+    scope: multi-directive-conformity-sequencing
+    status: active
+    canonical_source: docs/compliance/product-conformity-sequencing.md
+  - path: docs/safety/proof-test-methodology.md
+    artifact_type: normative
+    scope: proof-test-interval-methodology
+    status: active
+    canonical_source: docs/safety/proof-test-methodology.md
+  - path: docs/safety/ssi-conflict-resolution-example.md
+    artifact_type: normative
+    scope: ssi-conflict-resolution-worked-example
+    status: active
+    canonical_source: docs/safety/ssi-conflict-resolution-example.md
+  - path: docs/security/ot-incident-response.md
+    artifact_type: normative
+    scope: ot-incident-response-procedure
+    status: active
+    canonical_source: docs/security/ot-incident-response.md
+  - path: docs/ci-cd/governance-pipeline.md
+    artifact_type: normative
+    scope: ci-cd-governance-pipeline
+    status: active
+    canonical_source: docs/ci-cd/governance-pipeline.md
+
+  # New policy
+  - path: policies/POL-CPS-04-vulnerability-disclosure.md
+    artifact_type: normative
+    scope: vulnerability-disclosure-handling-policy
+    status: draft
+    canonical_source: policies/POL-CPS-04-vulnerability-disclosure.md
+
+  # New checklists
+  - path: checklists/change-review.md
+    artifact_type: approved-pattern
+    scope: change-review-checklist
+    status: active
+    canonical_source: checklists/change-review.md
+  - path: checklists/incident-response.md
+    artifact_type: approved-pattern
+    scope: incident-response-checklist
+    status: active
+    canonical_source: checklists/incident-response.md
+  - path: checklists/vulnerability-response.md
+    artifact_type: approved-pattern
+    scope: vulnerability-response-checklist
+    status: active
+    canonical_source: checklists/vulnerability-response.md
+
   # Scripts and CI
+  - path: Makefile
+    artifact_type: normative
+    scope: build-system
+    status: active
+    canonical_source: Makefile
   - path: scripts/validate_repo.py
     artifact_type: normative
     scope: repository-validation

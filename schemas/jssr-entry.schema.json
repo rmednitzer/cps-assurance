@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/jssr-entry.schema.json",
+  "title": "Joint safety-security requirement entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^JSSR-\\d+$"
+    },
+    "object_type": {
+      "const": "jssr"
+    },
+    "requirement": {
+      "type": "string"
+    },
+    "safety_rationale": {
+      "type": "string"
+    },
+    "security_rationale": {
+      "type": "string"
+    },
+    "derived_from": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^SSI-\\d+$"
+      },
+      "minItems": 1
+    },
+    "enforcer": {
+      "type": "string"
+    },
+    "verification_method": {
+      "type": "string"
+    },
+    "acceptance_criteria": {
+      "type": "string"
+    },
+    "evidence_type": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "requirement",
+    "safety_rationale",
+    "security_rationale",
+    "derived_from",
+    "verification_method"
+  ]
+}

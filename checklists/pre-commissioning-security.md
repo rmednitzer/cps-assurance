@@ -27,6 +27,7 @@
 - [ ] PLC logic hash baseline captured post-commissioning
 - [ ] Application whitelisting active on HMI and engineering workstations
 - [ ] Firmware integrity checking enabled where supported
+- [ ] As-commissioned configuration baseline captured, hashed, and stored
 
 ## Monitoring
 
@@ -35,6 +36,7 @@
 - [ ] Safety zone network monitoring active (separate from general OT monitoring)
 - [ ] Log aggregation configured: OT device logs → DMZ syslog → SIEM
 - [ ] Alert routing configured per priority table (P1 safety events → immediate)
+- [ ] Incident response tabletop exercise completed; roles and procedures validated
 
 ## Patch management
 
@@ -42,6 +44,18 @@
 - [ ] ICS-CERT/CISA advisory subscription active for all OT vendors
 - [ ] Staging/simulation environment available for patch testing
 - [ ] Compensating controls documented for unpatchable legacy devices
+
+## Supply chain
+
+- [ ] Vendor/integrator security assessment completed and passed
+- [ ] Security requirements included in vendor contracts (patch SLAs, vulnerability notification)
+- [ ] Third-party component inventory matches SBOM
+
+## Physical security
+
+- [ ] Control cabinets locked; keys managed per access control policy
+- [ ] Physical access to OT zones restricted (badges, barriers, CCTV)
+- [ ] Tamper detection on safety-critical equipment where feasible
 
 ## Documentation
 

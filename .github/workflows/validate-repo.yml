@@ -17,7 +17,22 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: pip install -r scripts/requirements.txt
 
       - name: Run repository validation
         run: make validate
+
+      - name: Check YAML files
+        run: make check-yaml
+
+      - name: Check JSON files
+        run: make check-json
+
+  lint-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: "**/*.md"
