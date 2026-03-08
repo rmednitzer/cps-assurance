@@ -8,15 +8,18 @@ All changes to this repository follow the change management policy (POL-CPS-03 f
 |------|----------------|----------|
 | `policies/` | Legal review + safety manager + CISO | Safety manager signs tag |
 | `registers/hazard-register.md` | Safety engineer + safety manager | Merge request review |
+| `registers/safety-constraint-register.md` | Safety engineer + safety manager | Merge request review |
+| `registers/threat-register.md` | OT security lead + CISO | Merge request review |
 | `registers/zone-conduit-register.md` | OT security lead + CISO | Merge request review |
 | `registers/ssi-register.md` | Safety engineer + OT security lead (joint) | Merge request review |
+| `registers/traceability-manifest.md` | Safety manager + compliance lead | Merge request review |
 | `registers/product-register.md` | Product owner + compliance lead | Merge request review |
 | `docs/` | Peer review (1 reviewer minimum) | Any team member |
 | `templates/`, `checklists/` | Safety manager or CISO | Merge request review |
 
 ## Safety-critical change rule
 
-Any change that modifies a hazard (H-n), safety function (SF-n), SIL/PL allocation, zone boundary (Z-n), or conduit definition (CO-n) is a **safety-critical change**. These require:
+Any change that modifies a hazard (H-n), safety function (SF-n), safety constraint (SC-n), threat (T-n), SIL/PL allocation, zone boundary (Z-n), or conduit definition (CO-n) is a **safety-critical change**. These require:
 
 1. Joint review by safety engineer AND OT security lead
 2. Impact analysis on the SSI register (does this change create or modify a safety-security interaction?)
@@ -39,3 +42,14 @@ Any change that modifies a hazard (H-n), safety function (SF-n), SIL/PL allocati
 ## Evidence
 
 Every approved register update and policy version is stored in the evidence pipeline (link to platform-assurance evidence store: `evidence/governance/cps/{year}/`). Do not manually upload — use the merge-to-main CI trigger or the governance upload CLI.
+
+
+## Local validation
+
+Run local validation before opening a merge request:
+
+```bash
+make validate
+```
+
+The validator checks canonical Markdown references, duplicate IDs, unresolved placeholders in governance metadata, and JSON schema integrity under `schemas/`. CI runs the same check on pull requests.

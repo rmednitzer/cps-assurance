@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/threat-entry.schema.json",
+  "title": "Threat entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^T-\\d+$"
+    },
+    "object_type": {
+      "const": "threat"
+    },
+    "stride": {
+      "type": "string",
+      "enum": [
+        "Spoofing",
+        "Tampering",
+        "Repudiation",
+        "Information disclosure",
+        "Denial of service",
+        "Elevation of privilege"
+      ]
+    },
+    "entry_point": {
+      "type": "string"
+    },
+    "zones": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^Z-\\d+$"
+      }
+    },
+    "conduits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^CO-\\d+$"
+      }
+    },
+    "safety_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(H|SF|SSI)-\\d+$"
+      }
+    },
+    "physical_consequence": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "stride",
+    "entry_point",
+    "physical_consequence"
+  ]
+}

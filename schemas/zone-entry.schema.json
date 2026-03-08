@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/zone-entry.schema.json",
+  "title": "Zone entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^Z-\\d+$"
+    },
+    "object_type": {
+      "const": "zone"
+    },
+    "purdue_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "safety_functions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^SF-\\d+$"
+      }
+    },
+    "sl_t": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "physical_access_control": {
+      "type": "string"
+    },
+    "platform_controls": {
+      "type": "array",
+      "description": "Cross-repo references to platform-assurance CTL-nnnn controls that this zone depends on for SL-T achievement.",
+      "items": {
+        "type": "string",
+        "pattern": "^CTL-[0-9]{4}$"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "purdue_level",
+    "sl_t"
+  ]
+}

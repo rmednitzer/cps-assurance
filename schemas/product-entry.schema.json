@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/product-entry.schema.json",
+  "title": "Product entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^PROD-\\d+$"
+    },
+    "object_type": {
+      "const": "product"
+    },
+    "type": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "manufacturer",
+        "authorised_rep",
+        "importer",
+        "distributor",
+        "operator"
+      ]
+    },
+    "connectivity": {
+      "type": "string",
+      "enum": [
+        "wired",
+        "wireless",
+        "none",
+        "mixed"
+      ]
+    },
+    "safety_relevant": {
+      "type": "boolean"
+    },
+    "applicable_instruments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trace_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(H|SF|SC|T|SSI|JSSR)-\\d+$"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "type",
+    "role",
+    "connectivity",
+    "safety_relevant"
+  ]
+}

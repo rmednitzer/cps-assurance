@@ -26,7 +26,7 @@ The core challenge is that safety and security are not independent in CPS. A sec
 
 **Policies.** Three CPS-specific policies extending the platform-assurance ISMS: functional safety management (IEC 61508 lifecycle), OT security (IEC 62443-2-1), and product conformity with post-market obligations. These complement, not replace, the ten IT-layer policies in platform-assurance.
 
-**Registers and templates.** Hazard register, zone/conduit register, safety-security interaction (SSI) register, and product register — all with structured templates. Checklists for pre-commissioning (safety and security) and annual review. Templates for hazard entries, zone/conduit entries, SSI entries, product gap assessments, and safety-security change reviews.
+**Registers and templates.** Hazard register, safety constraint register, threat register, zone/conduit register, safety-security interaction (SSI) register, product register, and a traceability manifest — all with structured templates. Checklists for pre-commissioning (safety and security) and annual review. Templates cover hazard entries, safety constraints, threat entries, zone/conduit entries, SSI entries, assurance cases, traceability manifests, product gap assessments, and safety-security change reviews.
 
 ## Design principles
 
@@ -61,21 +61,34 @@ The core challenge is that safety and security are not independent in CPS. A sec
 
 Evidence is tagged by provenance: `[F]` verified fact, `[I]` inference, `[S]` heuristic — with confidence levels {50,70,80,90}.
 
+The typed schema layer lives in `schemas/`; implementation guidance for machine-readable entries and generated traceability lives in `docs/assurance/data-model-and-traceability.md`. The AI-facing artifact classification index lives in `artifact-index.yaml`.
+
 ## Relationship to platform-assurance
 
 This repo governs the **CPS-specific layer**: physical safety, OT networks, product certification. The [platform-assurance](https://github.com/rmednitzer/platform-assurance) repo governs the **IT platform layer**: ISMS, NIS2 entity obligations, GDPR, evidence pipeline, observability, IAM.
 
-Where they connect: platform-assurance evidence pipeline stores CPS evidence artifacts. Platform-assurance ISMS policies (POL-01..10) apply to the IT layer; CPS policies (POL-CPS-01..03) extend them for the physical layer. NIS2 obligations flow from platform-assurance; CPS-specific controls feed back as NIS2 Art 21 technical measures.
+Where they connect:
+
+- **Evidence pipeline:** CPS evidence artifacts flow into the platform-assurance evidence pipeline (MinIO WORM, cosign signing, OpenSearch indexing, daily hash chain). CPS evidence types, metadata schema, and storage paths are defined in `docs/evidence/cps-evidence-types.md`.
+- **Change management:** Platform-assurance POL-10 applies to all changes; CPS policies (POL-CPS-01..03) add OT-specific review gates. Changes affecting OT infrastructure, safety zones, or CPS-scope products must pass both POL-10 and the CPS-specific gates.
+- **Incident escalation:** OT security alerts escalate to the platform-assurance incident response workflow (POL-04) per the priority mapping in `docs/evidence/cps-evidence-types.md` §6.
+- **Regulatory split:** NIS2 entity-level obligations live in platform-assurance; CPS-specific controls (Machinery Reg, IEC 62443, IEC 61508) live here; CRA spans both.
+- **Control cross-references:** CPS zone/conduit and safety-constraint schemas accept `platform_controls` references (CTL-nnnn) to trace dependencies on IT-layer controls.
 
 ## Getting started
 
 1. Read `docs/architecture/standards-applicability.md` — determine which standards and directives apply
 2. Populate `registers/product-register.md` — list CPS products with applicable directives
 3. Conduct hazard analysis using `templates/hazard-analysis/` → `registers/hazard-register.md`
-4. Build zone/conduit model using `templates/zone-conduit/` → `registers/zone-conduit-register.md`
-5. Run safety-security interaction analysis using `templates/safety-security-interaction/`
-6. Get legal review on `policies/`; management approval
-7. Execute checklists before commissioning
+4. Derive safety constraints using `templates/safety-constraints/` → `registers/safety-constraint-register.md`
+5. Build a threat model using `templates/threat-model/` → `registers/threat-register.md`
+6. Build zone/conduit model using `templates/zone-conduit/` → `registers/zone-conduit-register.md`
+7. Run safety-security interaction analysis using `templates/safety-security-interaction/` → `registers/ssi-register.md`
+8. Populate the traceability manifest using `templates/traceability/` → `registers/traceability-manifest.md`
+9. Review `docs/assurance/data-model-and-traceability.md` and `schemas/` before automating or generating evidence
+10. Run `make validate` before review or merge
+11. Get legal review on `policies/`; management approval
+12. Execute checklists before commissioning
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the review process, safety-critical change rules, and commit conventions.
 

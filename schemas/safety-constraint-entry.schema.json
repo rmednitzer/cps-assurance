@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/safety-constraint-entry.schema.json",
+  "title": "Safety constraint entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^SC-\\d+$"
+    },
+    "object_type": {
+      "const": "safety_constraint"
+    },
+    "derived_from": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(UCA|H|SF)-\\d+$"
+      }
+    },
+    "applies_to": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(SF|Z|CO)-\\d+$"
+      }
+    },
+    "process_safety_time_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sample_period_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "latency_budget_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "jitter_budget_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "stale_data_timeout_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "watchdog_threshold_cycles": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "actuator_authority_limit": {
+      "type": "string"
+    },
+    "verification_method": {
+      "type": "string"
+    },
+    "platform_controls": {
+      "type": "array",
+      "description": "Cross-repo references to platform-assurance CTL-nnnn controls that contribute to enforcing this constraint.",
+      "items": {
+        "type": "string",
+        "pattern": "^CTL-[0-9]{4}$"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "derived_from",
+    "applies_to",
+    "verification_method"
+  ]
+}

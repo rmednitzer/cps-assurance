@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/conduit-entry.schema.json",
+  "title": "Conduit entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CO-\\d+$"
+    },
+    "object_type": {
+      "const": "conduit"
+    },
+    "source_zone": {
+      "type": "string",
+      "pattern": "^Z-\\d+$"
+    },
+    "destination_zone": {
+      "type": "string",
+      "pattern": "^Z-\\d+$"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "unidirectional",
+        "bidirectional"
+      ]
+    },
+    "protocols": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_impact": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "source_zone",
+    "destination_zone",
+    "direction"
+  ]
+}

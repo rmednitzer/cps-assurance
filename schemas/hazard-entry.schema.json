@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/hazard-entry.schema.json",
+  "title": "Hazard entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^H-\\d+$"
+    },
+    "object_type": {
+      "const": "hazard"
+    },
+    "losses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^L-\\d+$"
+      }
+    },
+    "safety_functions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^SF-\\d+$"
+      }
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "Catastrophic",
+        "Critical",
+        "Marginal",
+        "Negligible"
+      ]
+    },
+    "exposure": {
+      "type": "string",
+      "enum": [
+        "Frequent",
+        "Probable",
+        "Occasional",
+        "Remote",
+        "Improbable"
+      ]
+    },
+    "avoidability": {
+      "type": "string",
+      "enum": [
+        "Impossible",
+        "Difficult",
+        "Possible"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "losses",
+    "safety_functions"
+  ]
+}

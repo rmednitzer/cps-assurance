@@ -1,0 +1,252 @@
+version: 1
+artifacts:
+  # Repository root
+  - path: README.md
+    artifact_type: normative
+    scope: repository-overview
+    status: active
+    canonical_source: README.md
+  - path: artifact-index.yaml
+    artifact_type: normative
+    scope: ai-context-index
+    status: active
+    canonical_source: artifact-index.yaml
+  - path: CONTRIBUTING.md
+    artifact_type: normative
+    scope: contribution-and-change-management
+    status: active
+    canonical_source: CONTRIBUTING.md
+  - path: LICENSE
+    artifact_type: normative
+    scope: license
+    status: active
+    canonical_source: LICENSE
+
+  # Architecture
+  - path: docs/architecture/cps-reference-architecture.md
+    artifact_type: normative
+    scope: purdue-model-pial-boundaries-trust-boundaries
+    status: active
+    canonical_source: docs/architecture/cps-reference-architecture.md
+  - path: docs/architecture/standards-applicability.md
+    artifact_type: normative
+    scope: regulatory-and-standards-applicability-decision
+    status: active
+    canonical_source: docs/architecture/standards-applicability.md
+
+  # Assurance
+  - path: docs/assurance/data-model-and-traceability.md
+    artifact_type: normative
+    scope: data-model-schema-layer-traceability-rules
+    status: active
+    canonical_source: docs/assurance/data-model-and-traceability.md
+
+  # Compliance
+  - path: docs/compliance/conformity-assessment-guide.md
+    artifact_type: normative
+    scope: eu-product-conformity-assessment
+    status: active
+    canonical_source: docs/compliance/conformity-assessment-guide.md
+  - path: docs/compliance/regulatory-mapping.md
+    artifact_type: normative
+    scope: machinery-reg-cra-iec62443-iec61508-crosswalk
+    status: active
+    canonical_source: docs/compliance/regulatory-mapping.md
+
+  # Safety
+  - path: docs/safety/functional-safety-approach.md
+    artifact_type: normative
+    scope: stpa-hazard-analysis-sil-pl-pial-safety-contracts
+    status: active
+    canonical_source: docs/safety/functional-safety-approach.md
+  - path: docs/safety/safety-security-interaction.md
+    artifact_type: normative
+    scope: ssi-taxonomy-joint-stpa-stride-conflict-resolution
+    status: active
+    canonical_source: docs/safety/safety-security-interaction.md
+
+  # Security
+  - path: docs/security/ot-security-architecture.md
+    artifact_type: normative
+    scope: iec62443-zone-conduit-stride-ot-controls
+    status: active
+    canonical_source: docs/security/ot-security-architecture.md
+
+  # Evidence
+  - path: docs/evidence/cps-evidence-types.md
+    artifact_type: normative
+    scope: cps-evidence-schema-pipeline-interface
+    status: active
+    canonical_source: docs/evidence/cps-evidence-types.md
+
+  # Policies
+  - path: policies/POL-CPS-01-safety-management.md
+    artifact_type: normative
+    scope: functional-safety-management-policy
+    status: draft
+    canonical_source: policies/POL-CPS-01-safety-management.md
+  - path: policies/POL-CPS-02-ot-security.md
+    artifact_type: normative
+    scope: ot-ics-security-policy
+    status: draft
+    canonical_source: policies/POL-CPS-02-ot-security.md
+  - path: policies/POL-CPS-03-product-conformity.md
+    artifact_type: normative
+    scope: product-conformity-post-market-policy
+    status: draft
+    canonical_source: policies/POL-CPS-03-product-conformity.md
+
+  # Registers
+  - path: registers/hazard-register.md
+    artifact_type: normative
+    scope: hazard-register-H-n
+    status: active
+    canonical_source: registers/hazard-register.md
+  - path: registers/safety-constraint-register.md
+    artifact_type: normative
+    scope: safety-constraint-register-SC-n
+    status: active
+    canonical_source: registers/safety-constraint-register.md
+  - path: registers/threat-register.md
+    artifact_type: normative
+    scope: threat-register-T-n
+    status: active
+    canonical_source: registers/threat-register.md
+  - path: registers/zone-conduit-register.md
+    artifact_type: normative
+    scope: zone-conduit-register-Z-n-CO-n
+    status: active
+    canonical_source: registers/zone-conduit-register.md
+  - path: registers/ssi-register.md
+    artifact_type: normative
+    scope: safety-security-interaction-register-SSI-n
+    status: active
+    canonical_source: registers/ssi-register.md
+  - path: registers/product-register.md
+    artifact_type: normative
+    scope: product-register-PROD-n
+    status: active
+    canonical_source: registers/product-register.md
+  - path: registers/traceability-manifest.md
+    artifact_type: normative
+    scope: traceability-closure-manifest
+    status: active
+    canonical_source: registers/traceability-manifest.md
+
+  # Schemas
+  - path: schemas/common.schema.json
+    artifact_type: normative
+    scope: common-object-metadata-schema
+    status: active
+    canonical_source: schemas/common.schema.json
+  - path: schemas/hazard-entry.schema.json
+    artifact_type: normative
+    scope: hazard-entry-schema
+    status: active
+    canonical_source: schemas/hazard-entry.schema.json
+  - path: schemas/safety-constraint-entry.schema.json
+    artifact_type: normative
+    scope: safety-constraint-entry-schema
+    status: active
+    canonical_source: schemas/safety-constraint-entry.schema.json
+  - path: schemas/threat-entry.schema.json
+    artifact_type: normative
+    scope: threat-entry-schema
+    status: active
+    canonical_source: schemas/threat-entry.schema.json
+  - path: schemas/zone-entry.schema.json
+    artifact_type: normative
+    scope: zone-entry-schema
+    status: active
+    canonical_source: schemas/zone-entry.schema.json
+  - path: schemas/conduit-entry.schema.json
+    artifact_type: normative
+    scope: conduit-entry-schema
+    status: active
+    canonical_source: schemas/conduit-entry.schema.json
+  - path: schemas/ssi-entry.schema.json
+    artifact_type: normative
+    scope: ssi-entry-schema
+    status: active
+    canonical_source: schemas/ssi-entry.schema.json
+  - path: schemas/product-entry.schema.json
+    artifact_type: normative
+    scope: product-entry-schema
+    status: active
+    canonical_source: schemas/product-entry.schema.json
+
+  # Templates
+  - path: templates/hazard-analysis/TEMPLATE-hazard-entry.md
+    artifact_type: approved-pattern
+    scope: hazard-entry-template
+    status: active
+    canonical_source: templates/hazard-analysis/TEMPLATE-hazard-entry.md
+  - path: templates/safety-constraints/TEMPLATE-safety-constraint-entry.md
+    artifact_type: approved-pattern
+    scope: safety-constraint-entry-template
+    status: active
+    canonical_source: templates/safety-constraints/TEMPLATE-safety-constraint-entry.md
+  - path: templates/threat-model/TEMPLATE-threat-entry.md
+    artifact_type: approved-pattern
+    scope: threat-entry-template
+    status: active
+    canonical_source: templates/threat-model/TEMPLATE-threat-entry.md
+  - path: templates/zone-conduit/TEMPLATE-zone-conduit-entry.md
+    artifact_type: approved-pattern
+    scope: zone-conduit-entry-template
+    status: active
+    canonical_source: templates/zone-conduit/TEMPLATE-zone-conduit-entry.md
+  - path: templates/safety-security-interaction/TEMPLATE-ssi-entry.md
+    artifact_type: approved-pattern
+    scope: ssi-entry-template
+    status: active
+    canonical_source: templates/safety-security-interaction/TEMPLATE-ssi-entry.md
+  - path: templates/assurance-case/TEMPLATE-assurance-case.md
+    artifact_type: approved-pattern
+    scope: assurance-case-template
+    status: active
+    canonical_source: templates/assurance-case/TEMPLATE-assurance-case.md
+  - path: templates/traceability/TEMPLATE-traceability-manifest.md
+    artifact_type: approved-pattern
+    scope: traceability-manifest-template
+    status: active
+    canonical_source: templates/traceability/TEMPLATE-traceability-manifest.md
+  - path: templates/product-certification/TEMPLATE-product-gap-assessment.md
+    artifact_type: approved-pattern
+    scope: product-gap-assessment-template
+    status: active
+    canonical_source: templates/product-certification/TEMPLATE-product-gap-assessment.md
+  - path: templates/change-review/TEMPLATE-safety-security-change-review.md
+    artifact_type: approved-pattern
+    scope: safety-security-change-review-template
+    status: active
+    canonical_source: templates/change-review/TEMPLATE-safety-security-change-review.md
+
+  # Checklists
+  - path: checklists/pre-commissioning-safety.md
+    artifact_type: approved-pattern
+    scope: pre-commissioning-safety-checklist
+    status: active
+    canonical_source: checklists/pre-commissioning-safety.md
+  - path: checklists/pre-commissioning-security.md
+    artifact_type: approved-pattern
+    scope: pre-commissioning-security-checklist
+    status: active
+    canonical_source: checklists/pre-commissioning-security.md
+  - path: checklists/annual-review.md
+    artifact_type: approved-pattern
+    scope: annual-review-checklist
+    status: active
+    canonical_source: checklists/annual-review.md
+
+  # Scripts and CI
+  - path: scripts/validate_repo.py
+    artifact_type: normative
+    scope: repository-validation
+    status: active
+    canonical_source: scripts/validate_repo.py
+  - path: .github/workflows/validate-repo.yml
+    artifact_type: normative
+    scope: ci-validation-workflow
+    status: active
+    canonical_source: .github/workflows/validate-repo.yml

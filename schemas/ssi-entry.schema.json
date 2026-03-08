@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/ssi-entry.schema.json",
+  "title": "Safety-security interaction entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^SSI-\\d+$"
+    },
+    "object_type": {
+      "const": "ssi"
+    },
+    "interaction_type": {
+      "type": "string",
+      "enum": [
+        "SS-1",
+        "SS-2",
+        "SS-3",
+        "SS-4",
+        "SS-5",
+        "SS-6",
+        "SS-7"
+      ]
+    },
+    "safety_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(H|SF|UCA|SC)-\\d+$"
+      }
+    },
+    "security_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(T|Z|CO)-\\d+$"
+      }
+    },
+    "jssr_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^JSSR-\\d+$"
+      }
+    },
+    "physical_consequence": {
+      "type": "string"
+    },
+    "resolution": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "interaction_type",
+    "safety_links",
+    "security_links",
+    "physical_consequence",
+    "resolution"
+  ]
+}
