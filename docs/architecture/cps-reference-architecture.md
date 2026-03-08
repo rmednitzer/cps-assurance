@@ -48,7 +48,7 @@ Level 0: Physical Process
 
 ─── SIS Zone (separate) ───
   Safety PLCs, SIS logic solvers
-  [PIAL boundary: safety independence — dedicated zone, highest SL-T]
+  [PIAL boundary: safety function independence — dedicated zone, highest SL-T]
   Conduit CO-sis: unidirectional where possible (SIS → BPCS read-only)
 ```
 
