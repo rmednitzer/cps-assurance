@@ -6,8 +6,7 @@ validate:
 	python3 scripts/validate_repo.py
 
 lint-md:
-	@command -v markdownlint >/dev/null 2>&1 && markdownlint '**/*.md' || \
-		echo "markdownlint not found. Install with: npm install -g markdownlint-cli"
+	npx markdownlint-cli2 "**/*.md"
 
 check-yaml:
 	@python3 -c "\
@@ -62,7 +61,7 @@ help:
 	@echo "Available targets:"
 	@echo "  all          Run validate, check-yaml, and check-json"
 	@echo "  validate     Run repository structure validation"
-	@echo "  lint-md      Run markdownlint on all Markdown files"
+	@echo "  lint-md      Run markdownlint-cli2 on all Markdown files"
 	@echo "  check-yaml   Validate all YAML files"
 	@echo "  check-json   Validate all JSON files in schemas/"
 	@echo "  check-links  Run link checking via validate_repo.py"
