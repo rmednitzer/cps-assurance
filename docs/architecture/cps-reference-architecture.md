@@ -61,7 +61,7 @@ Every boundary in the architecture above is a PIAL enforcement point. Each must 
 | Sensor ingestion | Range [min,max], rate [samples/s], freshness [max age] | Flag sensor fault → diagnostic mode → degraded/halt | Sensor health metric |
 | Compute output | Value bounds, rate-of-change limit, timing deadline [ms] | Hold last safe output → increment watchdog → halt if persistent | Loop timing histogram |
 | Actuator command | Max force/torque/pressure, rate-of-change ramp | Clamp to limit → log → alert | Actuator position/force |
-| Safety function interface | Independence from BPCS, diagnostic coverage | Dedicated bus; no shared memory/power | SIS communication monitor |
+| Safety function independence | Independence from BPCS, diagnostic coverage | Dedicated bus; no shared memory/power | SIS communication monitor |
 | IT-OT DMZ | Protocol allow-list, direction enforcement, auth | Block + log + alert | IDS on DMZ conduit |
 | Zone boundary (any) | Conduit rules per IEC 62443-3-2 | Block + log + alert | Network flow monitor |
 
