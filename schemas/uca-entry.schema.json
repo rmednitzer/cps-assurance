@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/uca-entry.schema.json",
+  "title": "Unsafe control action entry",
+  "allOf": [
+    {
+      "$ref": "common.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^UCA-\\d+$"
+    },
+    "object_type": {
+      "const": "uca"
+    },
+    "control_action": {
+      "type": "string"
+    },
+    "uca_type": {
+      "type": "string",
+      "enum": [
+        "not_provided",
+        "provided_incorrectly",
+        "wrong_timing_order",
+        "applied_too_long_stopped_too_soon"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "hazards": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H-\\d+$"
+      },
+      "minItems": 1
+    },
+    "safety_functions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^SF-\\d+$"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "object_type",
+    "control_action",
+    "uca_type",
+    "description",
+    "hazards"
+  ]
+}

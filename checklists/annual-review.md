@@ -11,6 +11,7 @@
 - [ ] Proof tests completed per schedule; results documented
 - [ ] Safety function test records reviewed; no outstanding failures
 - [ ] Operator competency validated (training records current)
+- [ ] Operator competency revalidated (training records current, response times verified)
 - [ ] Any safety incidents reviewed; CAPA complete or on-track
 
 ## OT security
@@ -22,6 +23,8 @@
 - [ ] OT monitoring effectiveness reviewed (false positive rate, detection coverage)
 - [ ] Vendor remote access audit completed (sessions reviewed, unused accounts removed)
 - [ ] OT incident response procedure tested (tabletop or live exercise)
+- [ ] Vendor/integrator compliance reassessed (still meets security/safety criteria)
+- [ ] Configuration baseline compared to current state; unauthorized changes investigated
 
 ## Safety-security interaction
 
@@ -40,6 +43,12 @@
 - [ ] Technical documentation updated where system changes occurred
 - [ ] Support period and update commitments still on track
 
+## Change management
+
+- [ ] All changes in past year reviewed for proper safety/security impact analysis
+- [ ] Change log complete; no undocumented modifications
+- [ ] Lessons learned from incidents or near-misses captured and actioned
+
 ## Regulatory
 
 - [ ] Harmonised standards publications checked (any new hEN relevant to products?)
@@ -49,6 +58,7 @@
 ## Evidence
 
 - [ ] All review records stored in evidence pipeline
+- [ ] All required evidence artifacts accessible in evidence pipeline (spot-check retrieval)
 - [ ] This checklist signed and stored
 
 ## Sign-off

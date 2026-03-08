@@ -27,17 +27,55 @@
       "type": "string"
     },
     "review_cycle": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "annual",
+        "quarterly",
+        "monthly",
+        "on_change",
+        "on_incident",
+        "none"
+      ]
     },
     "links": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "mitigated_by": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SF-\\d+$"
+          }
+        },
+        "constrained_by": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SC-\\d+$"
+          }
+        },
+        "interacts_with": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SSI-\\d+$"
+          }
+        },
+        "related_to": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
     },
     "provenance": {
       "type": "object",
       "properties": {
         "basis": {
           "type": "string",
-          "pattern": "^\\[(F|I|S),?(50|70|80|90)?\\]$"
+          "pattern": "^\\[(F|I|S),(50|70|80|90)\\]$"
         },
         "verified_on": {
           "type": "string",

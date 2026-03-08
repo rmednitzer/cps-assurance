@@ -7,10 +7,10 @@
 
 ## Zones
 
-| ID | Zone name | Purdue level | Assets | Safety functions | SL-T | SL-C | SL-A | Gap |
-|----|-----------|-------------|--------|-----------------|------|------|------|-----|
-| Z-1 | [Populate: e.g., Safety PLC zone] | 1 | [Asset list] | SF-1, SF-2 | 3 | Unknown | Unknown | Assess |
-| Z-2 | | | | | | | | |
+| ID | Zone name | Purdue level | Assets | Safety functions | SL-T | SL-C | SL-A | Gap | Trust boundary | Physical access |
+|----|-----------|-------------|--------|-----------------|------|------|------|-----|----------------|-----------------|
+| Z-1 | [Populate: e.g., Safety PLC zone] | 1 | [Asset list] | SF-1 | 3 | Unknown | Unknown | Assess | [What crosses: data, commands, humans, media] | [Locked cabinet / restricted area / open] |
+| Z-2 | | | | | | | | | | |
 
 ## Conduits
 

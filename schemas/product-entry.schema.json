@@ -51,7 +51,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "pattern": "^(H|SF|SC|T|SSI|JSSR)-\\d+$"
+        "pattern": "^(L|H|SF|UCA|SC|T|Z|CO|SSI|JSSR)-\\d+$"
       }
     }
   },

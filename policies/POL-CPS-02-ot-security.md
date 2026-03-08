@@ -55,6 +55,52 @@ CPS evidence types, metadata, storage paths, and retention tiers are defined in 
 | NIS2 Art 21.2(e) (network and information systems security) | NIS2 |
 | CRA Annex I Part I (if OT products placed on market) | EU 2024/2847 |
 
+## OT access control and credentials
+
+- All default credentials shall be changed before commissioning (pre-commissioning-security checklist).
+- Password policy: minimum 12 characters, complexity requirements, no reuse of last 10 passwords.
+- MFA required for: engineering workstation access, remote access, safety PLC configuration changes.
+- Credential rotation: annually for service accounts, immediately upon personnel change.
+- Credential revocation: within 24h of personnel departure or role change.
+
+## Supply chain and third-party risk
+
+- OT vendors and integrators shall be assessed against IEC 62443-2-4 supplier requirements before engagement.
+- Security requirements shall be included in vendor contracts (patch SLAs, vulnerability notification, secure development evidence).
+- Third-party components shall be tracked in product SBOMs.
+- Vendor remote access shall use dedicated conduits with session recording and time-limited approval.
+
+## Configuration management
+
+- As-commissioned configuration baseline shall be captured, hashed, and stored in evidence pipeline.
+- All configuration changes require approval via change management process (POL-10 + CPS gates).
+- Unauthorized configuration changes detected by monitoring shall trigger P2 incident response.
+- Configuration baseline shall be re-captured after each approved change.
+
+## Incident classification
+
+- P1 Critical: safety system anomaly, PLC logic change detected, unauthorized device on safety zone, active exploitation.
+- P2 High: unauthorized engineering workstation access, firewall rule violation, failed safety PLC authentication, known OT vulnerability.
+- P3 Medium: anomalous OT traffic, failed jump server MFA, vendor access outside window.
+- P4 Low: informational alerts, minor policy violations, scheduled scan findings.
+- Reference: `docs/security/ot-incident-response.md` for full response procedures.
+
+## Network segmentation enforcement
+
+- Purdue model segmentation verified quarterly via automated network scan.
+- Firewall/ACL rules audited annually and after any network change.
+- Violations (unauthorized cross-level communication) trigger P2 incident response.
+- Network engineer and OT security lead jointly accountable for enforcement.
+
+## NIS2 compliance mapping
+
+- Where the operator is designated as essential or important entity under NIS2 Directive (EU) 2022/2555:
+  - Article 21 risk management measures mapped to POL-CPS-02 controls.
+  - Incident notification to national CSIRT within 24h (early warning), 72h (notification), 1 month (final report).
+  - Supply chain security per Article 21(2)(d) covered by supply chain section above.
+  - Monitoring per Article 21(2)(b) covered by OT monitoring section.
+- Annual NIS2 compliance review included in annual review checklist.
+
 ## Review and approval
 
 | Date | Version | Approved by | Signature |
