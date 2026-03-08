@@ -373,3 +373,8 @@ artifacts:
     scope: ci-validation-workflow
     status: active
     canonical_source: .github/workflows/validate-repo.yml
+  - path: .markdownlint-cli2.yaml
+    artifact_type: normative
+    scope: markdown-lint-configuration
+    status: active
+    canonical_source: .markdownlint-cli2.yaml

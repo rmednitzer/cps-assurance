@@ -1,0 +1,31 @@
+config:
+  # Line length is impractical to enforce in technical/policy markdown with tables
+  MD013: false
+  # Table pipe spacing style varies across files
+  MD060: false
+  # Blank lines around lists — many policy/checklist items have compact formatting
+  MD032: false
+  # Blank lines around headings — common in template front-matter blocks
+  MD022: false
+  # Bold text used as pseudo-headings in templates and registers
+  MD036: false
+  # Fenced code blocks without language — acceptable in config/YAML examples
+  MD040: false
+  # List indentation — tabs vs spaces mixed in existing files
+  MD007: false
+  # Blank lines around tables
+  MD058: false
+  # Blank lines around fenced code blocks
+  MD031: false
+  # Bare URLs in references/links
+  MD034: false
+  # Multiple consecutive blank lines
+  MD012: false
+  # First line must be a top-level heading — not applicable to templates
+  MD041: false
+  # Table column count mismatch
+  MD056: false
+  # Trailing punctuation in headings
+  MD026: false
+  # Trailing spaces
+  MD009: false
