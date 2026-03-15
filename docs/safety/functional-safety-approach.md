@@ -5,7 +5,7 @@
 - D) Safety function specification
 - E) Safety requirements allocation
 - F) Diagnostic coverage and common cause failure
-- G) PIAL boundary contracts for safety functions
+- G) Cyber-physical boundary contracts for safety functions
 - H) Verification and validation evidence
 - I) Applicable standards matrix
 - J) Machinery Regulation EHSR mapping
@@ -130,9 +130,9 @@ Common cause failure (CCF) defense:
 
 CCF beta factor estimation: state method, assumed beta, and sensitivity analysis.
 
-**G) PIAL boundary contracts for safety functions**
+**G) Cyber-physical boundary contracts for safety functions**
 
-Every safety function interface is a PIAL boundary. Produce contracts following the PIAL runtime contract pattern:
+Every safety function interface is a cyber-physical boundary. Produce contracts following the runtime contract pattern:
 
 Sensor ingestion boundary:
 - Input invariants: range [min, max], rate [samples/s], freshness [max age], resolution, noise floor
@@ -205,7 +205,7 @@ Map each relevant EHSR to: safety function(s), SIL/PL target, evidence, and gap 
 
 - **Full STPA:** Escalate to full STPA methodology for certification-grade causal analysis. This document produces the quick hazard register; a full STPA produces the complete UCA/scenario/constraint/evidence chain.
 - **Timing budget analysis:** Derive timing budgets for safety function response times (process safety time → compute deadline → actuator response).
-- **Runtime contracts (PIAL enforcement):** Produce the enforceable PIAL boundary contracts specified in section G.
+- **Runtime contracts (boundary enforcement):** Produce the enforceable cyber-physical boundary contracts specified in section G.
 - **docs/security/ot-security-architecture.md** (`docs/` in this repo): Safety functions must be in protected zones with appropriate SL-T. Machinery Regulation 1.1.9 requires cybersecurity of control systems.
 - **docs/compliance/conformity-assessment-guide.md** (`docs/` in this repo): CE marking requires conformity with all applicable directives including Machinery Regulation. SIL/PL evidence feeds the technical documentation.
 - **safety-security-interaction.md** (`docs/` in this repo): Joint analysis when safety mechanisms are attack targets or security measures could impair safety functions.

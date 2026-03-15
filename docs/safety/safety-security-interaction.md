@@ -225,7 +225,7 @@ Change request involving a safety component or a security control protecting a s
 - **docs/compliance/conformity-assessment-guide.md** (`docs/` in this repo): Regulatory drivers for joint analysis (Machinery Regulation EHSR 1.1.9, CRA).
 - **Full STPA (full STPA methodology):** For certification-grade causal analysis of safety-security interactions (attacker as controller in control structure).
 - **Threat modelling (STRIDE):** STRIDE analysis; also blast-radius for changes affecting both domains.
-- **Runtime contracts (PIAL enforcement):** PIAL boundary contracts that enforce both safety and security invariants.
+- **Runtime contracts (boundary enforcement):** Cyber-physical boundary contracts that enforce both safety and security invariants.
 - **Structured assurance case (GSN/CAE):** Unified safety-security assurance case (section F pattern).
 - **Operator interface design:** Operator response to safety-security events; alarm prioritization when safety and security alarms compete for attention.
 - **Joint change management:** Joint change management process for interacting controls.

@@ -25,7 +25,7 @@ artifacts:
   # Architecture
   - path: docs/architecture/cps-reference-architecture.md
     artifact_type: normative
-    scope: purdue-model-pial-boundaries-trust-boundaries
+    scope: purdue-model-cyber-physical-boundaries-trust-boundaries
     status: active
     canonical_source: docs/architecture/cps-reference-architecture.md
   - path: docs/architecture/standards-applicability.md
@@ -56,7 +56,7 @@ artifacts:
   # Safety
   - path: docs/safety/functional-safety-approach.md
     artifact_type: normative
-    scope: stpa-hazard-analysis-sil-pl-pial-safety-contracts
+    scope: stpa-hazard-analysis-sil-pl-safety-contracts
     status: active
     canonical_source: docs/safety/functional-safety-approach.md
   - path: docs/safety/safety-security-interaction.md
