@@ -1,46 +1,46 @@
 # CPS Reference Architecture
 
 **Date:** 2026-03-05
-**Scope:** Generic CPS reference architecture showing Purdue levels, PIAL boundaries, and trust boundaries for safety and security analysis.
+**Scope:** Generic CPS reference architecture showing Purdue levels, cyber-physical boundaries, and trust boundaries for safety and security analysis.
 **Status:** DRAFT — adapt to specific system.
 
 ---
 
-## 1 — Purdue model with PIAL boundaries
+## 1 — Purdue model with cyber-physical boundaries
 
 ```
 Level 5: Enterprise Network (corporate IT, internet)
   │
-  │  [PIAL boundary: IT-OT demarcation — no direct L5→L0/1]
+  │  [Boundary: IT-OT demarcation — no direct L5→L0/1]
   │  Firewall / proxy — strict allow-list; no OT protocol passthrough
   │
 Level 4: Enterprise IT (ERP, email, business apps)
   │
-  │  [PIAL boundary: DMZ admission]
+  │  [Boundary: DMZ admission]
   │  Firewall with conduit CO-dmz; application proxy; jump server
   │
 Level 3.5: IT-OT DMZ
   │  Historian replica, patch server, AV server, remote access gateway
   │
-  │  [PIAL boundary: OT admission]
+  │  [Boundary: OT admission]
   │  Firewall / data diode; conduit CO-ops
   │
 Level 3: Site Operations
   │  Historian, engineering workstation, OPC UA server
   │
-  │  [PIAL boundary: supervisory-to-control]
+  │  [Boundary: supervisory-to-control]
   │  Switch / VLAN; conduit CO-area
   │
 Level 2: Area Supervisory Control
   │  HMI, SCADA server
   │
-  │  [PIAL boundary: control commands]
+  │  [Boundary: control commands]
   │  Switch / VLAN / direct; conduit CO-ctrl
   │
 Level 1: Basic Control
   │  PLC, RTU, DCS controller
   │
-  │  [PIAL boundary: sensor-actuator interface]
+  │  [Boundary: sensor-actuator interface]
   │  Direct / fieldbus
   │
 Level 0: Physical Process
@@ -48,13 +48,13 @@ Level 0: Physical Process
 
 ─── SIS Zone (separate) ───
   Safety PLCs, SIS logic solvers
-  [PIAL boundary: safety function independence — dedicated zone, highest SL-T]
+  [Boundary: safety function independence — dedicated zone, highest SL-T]
   Conduit CO-sis: unidirectional where possible (SIS → BPCS read-only)
 ```
 
-## 2 — PIAL boundary contracts for CPS
+## 2 — Cyber-physical boundary contracts
 
-Every boundary in the architecture above is a PIAL enforcement point. Each must have:
+Every boundary in the architecture above is a contract enforcement point. Each must have:
 
 | Boundary | Invariants | Violation response | Monitor |
 |----------|-----------|-------------------|---------|
